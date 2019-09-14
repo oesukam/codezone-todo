@@ -5,10 +5,28 @@
     <title>My Todo App</title>
   </head>
   <body>
-    <h1>Hello!</h1>
-    We are using Node.js <span id="node-version"></span>, Chromium
-    <span id="chrome-version"></span>, and Electron
-    <span id="electron-version"></span>.
+    <div class="container">
+      <header class="header">
+        <input
+          type="text"
+          placeholder="Enter your task"
+          class="header__input"
+        />
+        <button class="header__button">Add</button>
+      </header>
+      <section class="filter">
+        <input type="text" placeholder="Filter tasks" class="filter__input" />
+        <button class="filter__button">Filter</button>
+      </section>
+
+      <h1 class="tasks-title">My Tasks</h1>
+      <section class="tasks">
+        <div class="task">
+          <div class="task__content"></div>
+          <div class="task__action"></div>
+        </div>
+      </section>
+    </div>
 
     <!-- You can also require other files to run in this process -->
     <script src="./renderer.js"></script>
