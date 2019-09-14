@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 .container {
   background-color: #d4d4d4;
   position: absolute;
@@ -6,4 +10,35 @@
   right: 10px;
   bottom: 10px;
   padding: 10px;
+  font-size: 14px;
+}
+
+.header {
+  display: flex;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+input {
+  height: 40px;
+  flex: 1;
+  margin-right: 10px;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: inherit;
+}
+input:focus {
+  outline: none;
+}
+
+button {
+  min-width: 100px;
+  border-radius: 5px;
+  font-size: inherit;
+  background-color: #6279b8;
+  color: #fff;
+}
+
+button:focus {
+  outline: none;
 }
