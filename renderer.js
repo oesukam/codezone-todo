@@ -14,7 +14,6 @@ taskInputElt.addEventListener('keyup', e => {
   if (e.keyCode === 13 && e.target.value) {
     tasks.unshift({ content: e.target.value });
     e.target.value = '';
-    console.log(JSON.stringify(tasks, undefined, 2));
     loadTasks();
   }
 });
@@ -37,16 +36,33 @@ taskFilterElt.addEventListener('keyup', e => {
   const { value } = e.target;
   if (e.keyCode === 13) {
     const filteredTasks = filterTasks(tasks);
-    console.log(JSON.stringify(filteredTasks, undefined, 2));
+    loadTasks(filteredTasks);
   }
 });
 
 taskFilterButtonElt.addEventListener('click', e => {
   const filteredTasks = filterTasks(tasks);
-  console.log(JSON.stringify(filteredTasks, undefined, 2));
+  loadTasks(filteredTasks);
 });
 
-const loadTasks = () => {
+const loadTasks = filteredTasks => {
+  if (filteredTasks) {
+    tasksElt.innerHTML = filteredTasks.map(
+      (task, index) => `
+      <div class="task">
+        <div class="task__content">${task.content}</div>
+        <button 
+          class="task__action"
+          data-index="${index}"
+          onclick="deleteTask(${index})"
+        >
+          Delete
+        </button>
+      </div>
+    `
+    );
+    return;
+  }
   tasksElt.innerHTML = tasks.map(
     (task, index) => `
     <div class="task">
