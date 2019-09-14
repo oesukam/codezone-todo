@@ -11,6 +11,8 @@
   bottom: 10px;
   padding: 10px;
   font-size: 14px;
+  display: flex;
+  flex-direction: column;
 }
 
 .header {
@@ -41,4 +43,38 @@ button {
 
 button:focus {
   outline: none;
+}
+
+.filter {
+  display: flex;
+}
+
+.tasks {
+  background-color: #fff;
+  border-radius: 5px;
+  display: flex;
+  width: 100%;
+  flex: 1;
+  flex-direction: column;
+  padding: 10px;
+  overflow-y: scroll;
+}
+
+.task {
+  display: flex;
+  width: 100%;
+  border: 1px solid gray;
+  padding: 10px;
+  align-items: center;
+  font-size: 16px;
+}
+
+.task__content {
+  flex: 1;
+}
+
+.task__action {
+  width: 100px;
+  text-align: right;
+  padding: 10px;
 }
